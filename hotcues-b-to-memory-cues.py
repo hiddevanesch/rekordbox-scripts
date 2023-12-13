@@ -11,8 +11,8 @@ root = tree.getroot()
 for track in root.findall('./COLLECTION/TRACK'):
     for position in track.findall('POSITION_MARK'):
         hotcue_num = int(position.get('Num'))
-        if hotcue_num == 1 or hotcue_num == 3:
-            # This is a hotcue B or D
+        if hotcue_num == 1:# or hotcue_num == 3:
+            # This is a hotcue B
             start = position.get('Start')
             # don't create duplicate mem cues
             if track.findall('./POSITION_MARK[@Num="-1"][@Start="' + start + '"]'):
